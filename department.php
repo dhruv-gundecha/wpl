@@ -13,17 +13,23 @@
     $deptid=$_POST['deptid'];
     $deptname=$_POST['deptname'];
   }
+
+//sql query use to fetch data from the table
   $sql="SELECT * FROM department";
   $result=$conn->query($sql);
+//if condition to check whether table has more than 0 rows
   if ($result->num_rows > 0) {
+    //creation of table according to the number of records to be fetched
     echo "<table border=5>
-  <tr>
     
+  <tr>
+   
   <th>deptid</th>
     
   <th>deptname</th>
     
   </tr>";
+    //above echo is used to print the names of the columns
   
     
     // output data of each row
