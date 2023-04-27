@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding: 0px;
+    font-family: 'Times New Roman';
+}
+
+form {
+    width: 510px;
+    margin: 50px auto;
+    background-color:white;
+    padding: 30px;    
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-right: 325px;
+}
+
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('home.jpg');
+    background-repeat: no-repeat ;
+    background-size: cover;
+    height:100vh;
+}
+
+ 
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: black;
+}
+  
+.form-group {
+    margin-bottom: 20px;
+    
+    
+}
+  
+aria-label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    background-color:navy;
+    border-color: black;
+    border-radius: 30px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    left: 50%;
+    transition: background-color 0.3s;
+    
+}
+  
+button[type="submit"]:hover {
+    background-color:transparent;
+    color: black;
+    border-color: black;
+}
+
