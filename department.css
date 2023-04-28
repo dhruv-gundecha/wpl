@@ -4,14 +4,15 @@
     font-family: 'Times New Roman';
 }
 
-form {
+/*form {
     width: 510px;
-    margin: 50px auto;
+    margin: 30px auto;
     background-color:white;
     padding: 30px;    
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     margin-right: 325px;
+    text-align: center;
 }
 
 body{
@@ -28,13 +29,33 @@ h2 {
     margin-bottom: 30px;
     text-align: center;
     color: black;
+    position: relative;
 }
   
-.form-group {
-    margin-bottom: 20px;
-    
-    
+
+
+
+.input-field{
+    background: white;
+    margin:15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
 }
+
+input{
+    width:100%;
+    background: transparent;
+    border:0;
+    outline:0;
+    padding:18px 15px;
+}
+
+.input-field i{
+    margin-left: 15px;
+    color:#999;
+}
+
   
 aria-label {
     display: block;
@@ -42,6 +63,71 @@ aria-label {
     font-weight: bold;
     margin-bottom: 5px;
     color: black;
+}
+*/
+.container{
+    width: 100%;
+    height:100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.form-group{
+    width:510px;
+    max-width:450px;
+    position: absolute;
+    top:20%;
+    left:30%;
+    background: white;
+    padding:50px 60px 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+    text-align:center;
+   
+}
+
+.form-group h1{
+    font-size: 30px;
+    margin-bottom:40px;
+    color:black;
+    position: relative;
+}
+
+.form-group h1::after{
+    content:'';
+    width:30px;
+    height:4px;
+    border-radius: 3px;
+    background: white;
+    position:absolute;
+    bottom:-12px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+
+.input-field{
+    background: #eaeaea;;
+    margin:15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    width:100%;
+    background:transparent;
+    border:0;
+    outline:0;
+    padding:18px 15px;
+}
+
+.input-field i{
+    margin-left:15px;
+    color:#999;
+
 }
 
 button[type="submit"] {
@@ -52,7 +138,7 @@ button[type="submit"] {
     border-color: black;
     border-radius: 30px;
     font-size: 18px;
-    color: white;
+    color: #fff;
     cursor: pointer;
     left: 50%;
     transition: background-color 0.3s;
@@ -62,6 +148,5 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color:transparent;
     color: black;
-    border-color: black;
 }
 
