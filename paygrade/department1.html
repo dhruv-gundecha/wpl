@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Department</title>
+    <link rel="stylesheet" href="department.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+
+<style> 
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+</style>
+
+<body>
+    <form>
+        <h2>Department Detail Form</h2>
+        <br>
+        <select class="form-select" id="m_Department" name="Department id" aria-label="Default select example">
+          <option selected>Department ID</option>
+          <option value="1">101</option>
+          <option value="2">102</option>
+          <option value="3">103</option>
+          <option value="4">104</option>
+          <option value="5">105</option>
+        </select>
+        <br>
+        <select class="form-select" id="m_Department" name="Department name" aria-label="Default select example">
+          <option selected>Department name</option>
+          <option value="1">Sales Department</option>
+          <option value="2">Finance Department</option>
+          <option value="3">Accounts Department</option>
+          <option value="4">Export Department</option>
+          <option value="5">HR Department</option>
+        </select>
+      <br>
+       
+      <center><button type="button" class="btn btn-primary btn-lg">Submit</button></center>
+       
+      </form>
+</body>
