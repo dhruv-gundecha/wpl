@@ -43,6 +43,5 @@ if (isset($_POST['signin-button'])) {
             </form>
         </div>
     </div>
-    <!-- <script src="script1.js"></script> -->
 </body>
 </html>

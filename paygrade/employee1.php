@@ -1,19 +1,53 @@
 <?php
 include('config.php');
 $msg = "";
-if (isset($_POST['submit'])) {
-  $emp_id = ($_POST['employee_id']);
-  $emp_name = ($_POST['employee_name']);
-  $grade_id = ($_POST['grade_id']);
-  $emp_dob = ($_POST['emp_dob']);
-  $emp_doj= ($_POST['emp_doj']);
-  $emp_phone= ($_POST['emp_mobile_no']);
 
-  $sql = "INSERT INTO employee(emp_id,emp_name,grade_id,emp_dob,emp_doj,emp_mobile_no) values('$emp_id','$emp_name','$grade_id','$emp_dob','$emp_doj','$emp_phone')";
-  mysqli_query($conn, $sql);
-  echo "<script>window.location.href ='home.php'</script>";
+if (isset($_POST['submit'])) {
+  $emp_id = mysqli_real_escape_string($conn, $_POST['employee_id']);
+  $emp_name = mysqli_real_escape_string($conn, $_POST['employee_name']);
+  $grade_id = mysqli_real_escape_string($conn, $_POST['grade_id']);
+  $emp_dob = mysqli_real_escape_string($conn, $_POST['emp_dob']);
+  $emp_doj = mysqli_real_escape_string($conn, $_POST['emp_doj']);
+  $emp_phone = mysqli_real_escape_string($conn, $_POST['emp_mobile_no']);
+
+  // Validate the form data
+  $errors = array();
+  if (empty($emp_id)) {
+    $errors[] = "Employee ID is required";
+  } elseif (!preg_match('/^\d+$/', $emp_id)) {
+    $errors[] = "Employee ID must consist of only integers";
+  }
+  if (empty($emp_name)) {
+    $errors[] = "Employee Name is required";
+  } elseif (!preg_match('/^[a-zA-Z\s]+$/', $emp_name)) {
+    $errors[] = "Employee Name must consist of only characters and spaces";
+  }
+  
+  if (empty($grade_id)) {
+    $errors[] = "Grade ID is required";
+  } elseif (!preg_match('/^\d+$/', $grade_id)) {
+    $errors[] = "Grade ID must consist of only integers";
+  }
+  if (!preg_match('/^\d{10}$/', $emp_phone)) {
+    $errors[] = "Employee Mobile No must be of 10 digits integer";
+  }
+  // Add validation for other form fields as needed
+
+  if (!empty($errors)) {
+    // If there are validation errors, display them to the user
+    $msg = implode("<br>", $errors);
+  } else {
+    // If there are no validation errors, insert the data into the database
+    $sql = "INSERT INTO employee(emp_id,emp_name,grade_id,emp_dob,emp_doj,emp_mobile_no) values('$emp_id','$emp_name','$grade_id','$emp_dob','$emp_doj','$emp_phone')";
+    if (mysqli_query($conn, $sql)) {
+      echo "<script>window.location.href ='home.php'</script>";
+    } else {
+      $msg = "Error: " . mysqli_error($conn);
+    }
+  }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +75,7 @@ select {
 <body>
     <form action='' method = 'POST'>
         <p id ="demo">Please fill the details</p>
-        <h2>Employee Detail Form</h2>
+        <h2>New Employee Detail Form</h2>
         <div class="form-group">
           <label for="Employee id">Employee id</label>
           <input type = "text" id = "emp_id" name="employee_id" required>
@@ -61,19 +95,6 @@ select {
             <option value="5">5</option>
           </select>
           <br>
-        
-          <!-- <form class="row gx-3 gy-2 align-items-center">
-            <div class="col-sm-3">
-              <label class="visually-hidden" for="specificSizeInputName">Name</label>
-              <input type="date" id="specificSizeInputName" placeholder="Jane Doe">
-            </div>
-            <div class="col-sm-3">
-              <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-              <div class="input-group">
-                <div class="input-group-text">@</div>
-                <input type="date" id="specificSizeInputGroupUsername" placeholder="Username">
-              </div>
-              </div> -->
         <div class="form-group">
         <label for="Employee dob">Employee dob</label><br>
         <input type = "date" name="emp_dob" required >
@@ -97,8 +118,8 @@ select {
         
         <br>
        
-        <center><button type="submit" name ="submit" onclick="validateNumber(); validateID(); validateInput(); validateName(); check()">Submit</button></center>
+        <center><button type="submit" name ="submit">Submit</button></center>
+        <?php echo $msg; ?>
       </form>
-      <script type="text/javascript" src="script.js"></script>
 </body>
 </body>

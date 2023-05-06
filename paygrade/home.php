@@ -8,10 +8,10 @@
         <div class="navbar">
             <img src="logo1.jpg" class="logo">
             <ul>
-                <li><a href="department1.html">Department Page</a>
+                <li><a href="department1.php">Department Page</a>
                 <li><a href="employee1.php">Employee Page</a> 
-                <li><a href="paygrade1.html">Paygrade Page</a> 
-                <li><a href="payslip.html">Payslip</a> 
+                <li><a href="paygrade1.php">Paygrade Page</a> 
+                <li><a href="payslip.php">Payslip</a> 
                  
             </ul>
         </div>

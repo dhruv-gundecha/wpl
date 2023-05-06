@@ -6,12 +6,14 @@
 
 form {
     width: 510px;
-    margin: 50px auto;
+    margin: 50px ;
     background-color:white;
     padding: 30px;    
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin-right: 325px;
+    margin-left: 50px;
+    
+    
 }
 
 body{
@@ -19,6 +21,9 @@ body{
     background-repeat: no-repeat ;
     background-size: cover;
     height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
  
@@ -63,4 +68,3 @@ button[type="submit"]:hover {
     background-color:gray;
     color: black;
 }
-
